@@ -48,6 +48,9 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
+        <activity android:name=".FeedActivity">
+        </activity>
+
     </application>
 
 </manifest>
