@@ -1,6 +1,7 @@
 package com.example.instagram;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,6 +80,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             Date createdAt = post.getCreatedAt();
             String timeAgo = Post.calculateTimeAgo(createdAt);
             tvRelativeTime.setText(timeAgo);
+
+            ivImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context, PostDetails.class);
+                    i.putExtra("description", post.getDescription());
+                    i.putExtra("username", post.getUser().getUsername());
+                    i.putExtra("timeAgo", timeAgo);
+                    i.putExtra("imageUrl", image.getUrl());
+                    context.startActivity(i);
+                }
+            });
         }
     }
 
