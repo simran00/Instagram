@@ -9,7 +9,8 @@
         <entry key="app/src/main/res/layout/feed_activity.xml" value="0.32138935033825866" />
         <entry key="app/src/main/res/layout/fragment_compose.xml" value="0.26972337933417634" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_post.xml" value="0.36106830541638363" />
+        <entry key="app/src/main/res/layout/fragment_logout.xml" value="0.22999318440755215" />
+        <entry key="app/src/main/res/layout/item_post.xml" value="0.38491264792049634" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.278125" />
         <entry key="app/src/main/res/xml/fileprovider.xml" value="0.1" />
       </map>

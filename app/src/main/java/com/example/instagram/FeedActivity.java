@@ -16,6 +16,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.instagram.fragments.ComposeFragment;
 import com.example.instagram.fragments.HomeFragment;
+import com.example.instagram.fragments.LogoutFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.parse.FindCallback;
@@ -52,6 +53,10 @@ public class FeedActivity extends AppCompatActivity {
                     case R.id.ic_new_post:
                         //Toast.makeText(FeedActivity.this, "Compose", Toast.LENGTH_SHORT).show();
                         fragment = new ComposeFragment();
+                        break;
+                    case R.id.ic_profile:
+                        //Toast.makeText(FeedActivity.this, "Compose", Toast.LENGTH_SHORT).show();
+                        fragment = new LogoutFragment();
                         break;
                     default:
                         fragment = new HomeFragment();
