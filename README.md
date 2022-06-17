@@ -39,7 +39,8 @@ The following **stretch** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Added a toolbar with Instagram logo on top.
+- [x] Implemented splash screen as app starts up.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
