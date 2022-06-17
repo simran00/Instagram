@@ -22,23 +22,42 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImagePost">
+
+        <ImageView
+            android:id="@+id/ivProfilePicPost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/john" />
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/tvUsernamePost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         android:text="nathan"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/ivImagePost" />
 
     <TextView
         android:id="@+id/tvRelativeTimePost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:text="22h"
         android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@+id/tvUsernamePost"
@@ -48,12 +67,9 @@
         android:id="@+id/tvDescriptionPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="A brief description of what might be inside of this."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsernamePost" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <ImageView
         android:id="@+id/ivImagePost"

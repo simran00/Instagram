@@ -54,6 +54,8 @@
         </activity>
         <activity android:name=".PostDetails">
         </activity>
+        <activity android:name=".SignupActivity">
+        </activity>
 
 
 

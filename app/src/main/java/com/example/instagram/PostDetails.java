@@ -20,6 +20,7 @@ public class PostDetails extends AppCompatActivity {
 
         TextView tvUsernamePost;
         ImageView ivImagePost;
+        ImageView ivProfilePicPost;
         TextView tvDescriptionPost;
         TextView tvRelativeTimePost;
 
@@ -27,6 +28,8 @@ public class PostDetails extends AppCompatActivity {
         String description = "";
         String timeAgo = "";
         String imageUrl = "";
+        String profilePicUrl = "";
+
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if (extras != null) {
@@ -46,9 +49,14 @@ public class PostDetails extends AppCompatActivity {
         tvDescriptionPost = (TextView) findViewById(R.id.tvDescriptionPost);
         tvRelativeTimePost = (TextView) findViewById(R.id.tvRelativeTimePost);
         ivImagePost = (ImageView) findViewById(R.id.ivImagePost);
+        ivProfilePicPost = (ImageView) findViewById(R.id.ivProfilePicPost);
 
         if (!imageUrl.equals("")) {
             Glide.with(this).load(imageUrl).into(ivImagePost);
+        }
+
+        if (!profilePicUrl.equals("")) {
+            Glide.with(this).load(profilePicUrl).into(ivProfilePicPost);
         }
         tvUsernamePost.setText(username);
         tvDescriptionPost.setText(description);

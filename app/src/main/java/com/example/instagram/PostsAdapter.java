@@ -57,6 +57,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvUsername;
+        private TextView tvUsername2;
+        private ImageView ivProfilePic;
         private ImageView ivImage;
         private TextView tvDescription;
         private TextView tvRelativeTime;
@@ -64,6 +66,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvUsername = itemView.findViewById(R.id.tvUsername);
+            tvUsername2 = itemView.findViewById(R.id.tvUsername2);
+            ivProfilePic = itemView.findViewById(R.id.ivProfilePic);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvRelativeTime = itemView.findViewById(R.id.tvRelativeTime);
@@ -73,7 +77,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             // Bind the post data to the view elements
             tvDescription.setText(post.getDescription());
             tvUsername.setText(post.getUser().getUsername());
+            tvUsername2.setText(post.getUser().getUsername());
+            ParseFile profilePic = (ParseFile) post.getUser().get("profilePic");
             ParseFile image = post.getImage();
+            if (profilePic != null) {
+                Glide.with(context).load(profilePic.getUrl()).into(ivProfilePic);
+            }
             if (image != null) {
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
@@ -89,6 +98,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                     i.putExtra("username", post.getUser().getUsername());
                     i.putExtra("timeAgo", timeAgo);
                     i.putExtra("imageUrl", image.getUrl());
+                    i.putExtra("profilePicUrl", profilePic.getUrl());
                     context.startActivity(i);
                 }
             });

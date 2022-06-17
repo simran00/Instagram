@@ -39,6 +39,7 @@ public class Post extends ParseObject {
         put(KEY_USER, user);
     }
 
+
     public static String calculateTimeAgo(Date createdAt) {
 
         int SECOND_MILLIS = 1000;
